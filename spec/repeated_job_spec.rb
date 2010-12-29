@@ -37,10 +37,10 @@ describe "Repeated::Job" do
 
       Delayed::Job.should_receive(:delete_all).with(/Repeated::Job/)
 
-      Delayed::Job.should_receive(:enqueue) do |object, priority, scheduled|
+      Delayed::Job.should_receive(:enqueue) do |object, options|
         object.should   == @repeated
-        priority.should == @repeated.priority
-        (scheduled - Time.now).should be_close(300, 5)
+        options[:priority].should == @repeated.priority
+        (options[:run_at] - Time.now).should be_close(300, 5)
       end
 
       @repeated.schedule_next
