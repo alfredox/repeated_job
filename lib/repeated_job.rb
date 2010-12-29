@@ -1,4 +1,4 @@
-require "active_support"
+require "active_support/time"
 require "rake"
 
 module Repeated
