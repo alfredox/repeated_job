@@ -22,7 +22,7 @@ module Repeated
     end
 
     def rounded_time(seconds = 60)
-      Time.at((Time.now.to_f / seconds).round * seconds)
+      Time.at((Time.now.to_f / seconds).ceil * seconds)
     end
 
   end

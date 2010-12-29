@@ -40,7 +40,7 @@ describe "Repeated::Job" do
       Delayed::Job.should_receive(:enqueue) do |object, options|
         object.should   == @repeated
         options[:priority].should == @repeated.priority
-        options[:run_at].should == Time.at((Time.now.to_f / 5.minutes).round * 5.minutes).getutc
+        options[:run_at].should == Time.at((Time.now.to_f / 5.minutes).ceil * 5.minutes).getutc
       end
 
       @repeated.schedule_next
