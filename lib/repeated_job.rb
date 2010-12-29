@@ -18,7 +18,11 @@ module Repeated
 
     def schedule_next
       Delayed::Job.delete_all "handler like '%Repeated::Job%'"
-      Delayed::Job.enqueue self, :priority => priority, :run_at => interval.minutes.from_now.getutc
+      Delayed::Job.enqueue self, :priority => priority, :run_at => rounded_time(interval.minutes).getutc
+    end
+
+    def rounded_time(seconds = 60)
+      Time.at((Time.now.to_f / seconds).round * seconds)
     end
 
   end
