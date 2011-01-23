@@ -48,7 +48,7 @@ describe "Repeated::Job" do
 
     it "should schedule itself again when executing" do
       @was_run = false
-      task(:cron) { @was_run = true }
+      task(:repeated) { @was_run = true }
 
       @repeated.should_receive(:schedule_next)
       @repeated.perform

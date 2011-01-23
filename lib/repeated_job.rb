@@ -13,7 +13,7 @@ module Repeated
 
     def perform
       schedule_next
-      Rake::Task["cron"].execute
+      Rake::Task["repeated"].execute
     end
 
     def schedule_next
