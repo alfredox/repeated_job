@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency "activesupport" , "~> 3.0"
   s.add_dependency "rails"         , "~> 3.0"
-  s.add_dependency "rake"         , "~> 10.0"
   s.add_dependency "delayed_job"   , "~> 3.0"
 
   s.files = Dir["lib/**/*"] + ["Rakefile", "README.markdown"]
