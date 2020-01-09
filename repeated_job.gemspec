@@ -14,9 +14,9 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = "repeated_job"
   s.required_rubygems_version = "> 1.3.6"
 
-  s.add_dependency "activesupport" , "~> 3.0"
-  s.add_dependency "rails"         , "~> 3.0"
-  s.add_dependency "delayed_job"   , "~> 3.0"
+  s.add_dependency "activesupport" , "~> 5.0"
+  s.add_dependency "rails"         , "~> 5.0"
+  s.add_dependency "delayed_job"   , "~> 4.0"
 
   s.files = Dir["lib/**/*"] + ["Rakefile", "README.markdown"]
   s.require_path = 'lib'

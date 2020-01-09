@@ -17,7 +17,7 @@ module Repeated
     end
 
     def schedule_next
-      Delayed::Job.delete_all "handler like '%Repeated::Job%'"
+      Delayed::Job.where("handler like '%Repeated::Job%'").delete_all
       Delayed::Job.enqueue self, :priority => priority, :run_at => rounded_time(interval.minutes).getutc
     end
 
